@@ -9,4 +9,5 @@ import cn.kgc.pojo.Users;
 public interface UsersService {
 
     Users selectByUserName(String username);
+
 }
