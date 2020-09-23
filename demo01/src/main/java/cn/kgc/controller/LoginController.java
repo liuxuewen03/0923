@@ -42,12 +42,23 @@ public class LoginController {
             model.addAttribute("error", "账号或密码输入错误");
             return "/jsp/login";
         } else {
+
             if (users.getSupper()==3){
                 session.setAttribute("nickname", users.getNickname());
                 session.setAttribute("id", users.getId());
                 session.setAttribute("password", users.getPassword());
                 return "redirect:adminindex";
             }else {
+                session.setAttribute("nickname", users.getNickname());
+            }
+
+
+            if (users.getSupper() == 3) {
+                session.setAttribute("nickname", users.getNickname());
+                session.setAttribute("id", users.getId());
+                session.setAttribute("password", users.getPassword());
+                return "/jsp/admin/index";
+            } else {
                 session.setAttribute("nickname", users.getNickname());
             }
 
